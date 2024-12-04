@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testeee</title>
+  <style>
+    body {
+      background-color: #000020;
+    }
+
+    canvas {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 200px;
+      height: 100vh;
+      display: block;
+    }
+
+    .thexmatrix {
+      position: absolute;
+      right: 0;
+      width: 200px;
+      height: 100vh;
+      border-left: 1px solid blue;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="thexmatrix">
+    <canvas id="matrix"></canvas>
+    <script>
+      const c = document.getElementById("matrix");
+      const ctx = c.getContext("2d");
+      c.height = window.innerHeight;
+      c.width = 200;
+
+      const letters = "wolfbyteWOLFBYTE01".split("");
+      const fontSize = 18; 
+      const columns = Math.floor(c.width / fontSize); // Mais colunas por canvas
+      let drops = [];
+
+      // Inicializa mais "drops" aleatoriamente nas colunas
+      for (let x = 0; x < columns; x++) {
+        drops[x] = (Math.floor(Math.random() * c.height / fontSize)) +100;
+      }
+
+      function draw() {
+        ctx.fillStyle = "#000020";
+        ctx.fillRect(0, 0, c.width, c.height);
+
+        ctx.font = `${fontSize}px arial`;
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = letters[Math.floor(Math.random() * letters.length)];
+          const text2 = letters[Math.floor(Math.random() * letters.length)];
+          const text3 = letters[Math.floor(Math.random() * letters.length)];
+          // Opacidade dinâmica
+          const opacity = Math.min((i * fontSize) / (c.width * 0.8), 1); 
+          ctx.globalAlpha = opacity;
+
+          // Definir cor da letra
+          ctx.fillStyle = `rgba(0, 255, 0, 1)`;
+
+          // Desenhar a letra
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          
+          setTimeout(ctx.fillText(text2, i * fontSize, drops[i] * fontSize), 500)
+          setTimeout(ctx.fillText(text3, i * fontSize, drops[i] * fontSize), 500)
+          // Reiniciar a queda aleatoriamente
+          if (drops[i] * fontSize > c.height && Math.random() > 0.88)
+            drops[i] = 0;
+
+          drops[i]++;
+        }
+
+        // Restaurar a opacidade padrão para o próximo frame
+        ctx.globalAlpha = 1;
+
+        window.requestAnimationFrame(draw);
+      }
+
+      draw();
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist+Mono&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Variáveis */
+:root {
+    --cor0: #00FFFF;
+    --cor1: #025E73;
+    --cor2: #151570;
+    --cor3: #16222e;
+    --cor4: #0b0b26;
+    --cor5: #06061b;
+    --fonte-padrao: 'Poppins', sans-serif;
+}
+
+* {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-padrao), Arial, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    background-color: var(--cor5);
+}
+
+/* Canvas */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+header, main {
+    text-align: center;
+    padding: 50px 20px 0;
+    background-color: transparent;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 10%;
+    background: linear-gradient(to bottom, #000000, #000000, #000000, rgba(0, 0, 0, 0.16));
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--cor0);
+}
+
+nav ul {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+}
+
+main {
+    max-width: 50%;
+    margin: 20px;
+    text-align: justify;
+}
+
+@media (max-width: 900px) {
+    main#quem_somos {
+        max-width: 90%;
+    }   
+}
+
+section#nossos_servicos {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 0 auto; /* Centraliza o texto */
+    text-align: justify;
+    background-size: cover; /* Faz o fundo ocupar toda a área */
+    background-repeat: no-repeat; /* Impede repetições */
+    background-position: center; /* Centraliza a imagem */
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    width: 100vw; /* Garante que o fundo ocupe toda a largura */
+    visibility: hidden;
+    opacity: 0;
+}
+
+section#nossos_servicos.scrolled {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Até 480px */
+@media screen and (max-width: 480px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-pq480p.png);
+    }
+}
+  
+/* Até 720px */
+@media screen and (min-width: 481px) and (max-width: 720px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-pq720p.png);
+    }
+}
+  
+/* Até 1080px */
+@media screen and (min-width: 721px) and (max-width: 1080px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-pq.png);
+    }
+}
+  
+/* Mais de 1080px */
+@media screen and (min-width: 1081px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-g.png);
+    }
+}
+
+main h2, section#nossos_servicos h2 {
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+main p, section#nossos_servicos p {
+    text-indent: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    max-width: 40vw;
+}
+
+section#nossos_servicos ul {
+    list-style-type: '\2714\00A0';
+    list-style-position: inside;
+    font-size: 18px;
+    margin-left: 30px;
+    max-width: 40vw;
+}
+
+.botao {
+    background-color: var(--cor0);
+    color: var(--cor5);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+section#por-que_contratar {
+    padding: 50px 10%;
+    text-align: center;
+    background-image: url(imagens/fundo2-1200x800.jpeg);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+section#por-que_contratar p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+section#por-que_contratar h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+
+
+.caixas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.metodos {
+    background-color: #16222e;
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(30% - 20px);
+    min-width: 250px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.metodos2 {
+    background-image: linear-gradient(135deg, var(--cor0), var(--cor1), var(--cor2));
+    padding: 25px;
+    border-radius: 8px;
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(30% - 20px);
+    min-width: 250px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.metodos h3 {
+    color: #00d8a5;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 1024px) {
+    .metodos, .metodos2 {
+        flex: 1 1 calc(50% - 20px); /* Cada caixa ocupa cerca de 50% da largura em telas médias */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .metodos, .metodos2 {
+        flex: 1 1 100%; /* Cada caixa ocupa 100% da largura em telas pequenas */
+        max-width: 100%;
+    }
+}
+/* Rodapé */
+.footer {
+    background-color: var(--cor4);
+    padding: 20px 20px; /* Menos padding para economizar espaço */
+    min-height: 120px; /* Altura mínima para garantir espaçamento confortável */
+    max-height: 180px; /* Altura máxima para não ocupar muito espaço em telas grandes */
+    height: auto; /* A altura se adapta ao conteúdo */
+}
+
+.caixa2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-indv {
+    flex: 1 1 22%;
+    margin: 10px;
+}
+
+.footer-indv h3 {
+    font-size: 18px; /* Reduz o tamanho do título para economizar espaço */
+    color: var(--cor0);
+    margin-bottom: 10px; /* Menos espaço entre o título e a lista */
+}
+
+.footer-indv ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-indv ul li {
+    font-size: 14px; /* Fonte menor para as listas */
+    line-height: 1.8;
+    color: #d9d9d9;
+    cursor: pointer;
+}
+
+.footer-indv a {
+    text-decoration: none;
+    font-size: 14px; /* Fonte menor para as listas */
+    line-height: 1.8;
+    color: #d9d9d9;
+    cursor: pointer;
+}
+
+.footer-indv ul li:hover {
+    color: var(--cor0);
+}
+
+.footer-indv a:hover {
+    color: var(--cor0);
+}
+
+@media (min-width: 1024px) {
+    .caixa2 {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-indv {
+        flex: 1 1 30%;
+        margin: 0 15px;
+        text-align: left;
+    }
+}
+
