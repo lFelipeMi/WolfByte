@@ -56,10 +56,20 @@ document.addEventListener("scroll", function () {
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
+const menuLinks = document.querySelectorAll("nav ul li a"); // Seleciona todos os links do menu
 
-// Adiciona/remova a classe active ao clicar
+// Alterna o menu ao clicar no botão de alternância
 menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("active"); // Ativa/desativa o menu
-    menuToggle.classList.toggle("active"); // Ativa/desativa o estado ativo do ícone
+    menu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
     nav.classList.toggle("active");
+});
+
+// Fecha o menu ao clicar em qualquer link
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        menuToggle.classList.remove("active");
+        nav.classList.remove("active");
+    });
 });
