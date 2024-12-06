@@ -91,7 +91,7 @@ nav a:hover {
     position: absolute;
     flex-direction: column;
     gap: 5px;
-    right: 90px;
+    right: 20px;
     cursor: pointer;
 }
 
@@ -148,9 +148,6 @@ main#quem_somos {
     text-align: center;
     padding: 50px 20px 0;
     background-color: transparent;
-}
-
-main#quem_somos {
     max-width: 50%;
     margin: 50px;
     text-align: justify;
@@ -160,7 +157,7 @@ main#quem_somos {
 main p {
     text-indent: 20px;
     margin-bottom: 10px;
-    font-size: 21px;
+    font-size: 1.2em;
     max-width: 40vw;
     font-weight: 400;
 }
@@ -174,80 +171,69 @@ main h2 {
     font-size: 2.0em;
 }
 
-@media query and (max-width: 900px) {
-    main#quem_somos p, main#quem_somos h2 {
-        max-width: 90vw;
-    }   
+
+@media (max-width: 900px) {
+    main#quem_somos {
+        padding: 0 20px; /* Margem interna de 20px */
+        margin: 0 auto; /* Mantém centralizado */
+        max-width: 90%;
+    }
+
+    main#quem_somos h2 {
+        font-size: 1.8em; /* Tamanho reduzido para o título */
+        text-align: center; /* Centraliza o título */
+        margin-bottom: 15px;
+        max-width: 85vw;
+    }
+
+    main#quem_somos p {
+        font-size: 1em; /* Ajusta o texto para menor tela */
+        text-indent: 0; /* Remove recuo em telas menores */
+        margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
+        text-align: justify; /* Mantém alinhamento justificado */
+        max-width: 85vw;
+    }
 }
-
-
 /*---------------- Nossos Servicos ----------------*/
 section#nossos_servicos {
-    text-align: center;
-    padding: 50px 20px;
-    margin: 0 auto; /* Centraliza o texto */
     text-align: justify;
-    background-size: cover; /* Faz o fundo ocupar toda a área */
+    padding: 50px 20px; /* Espaçamento interno */
+    background-size: cover; /* Ajusta o fundo para cobrir a área */
     background-repeat: no-repeat; /* Impede repetições */
     background-position: center; /* Centraliza a imagem */
-    height: 100vh; /* Ocupa 100% da altura da tela */
-    width: 100vw; /* Garante que o fundo ocupe toda a largura */
-    visibility: hidden;
-    opacity: 0;
+    min-height: 100vh; /* Garante altura mínima de 100% da viewport */
+    width: 100%; /* Ajusta a largura automaticamente */
+    visibility: hidden; /* Inicialmente escondido */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Suaviza a transição */
 }
 
 section#nossos_servicos.scrolled {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Até 480px */
-@media screen and (max-width: 480px) {
-    section#nossos_servicos {
-        background-image: url(imagens/fundo1-pq480p.png);
-    }
-}
-  
-/* Até 720px */
-@media screen and (min-width: 481px) and (max-width: 720px) {
-    section#nossos_servicos {
-        background-image: url(imagens/fundo1-pq720p.png);
-    }
-}
-  
-/* Até 1080px */
-@media screen and (min-width: 721px) and (max-width: 1080px) {
-    section#nossos_servicos {
-        background-image: url(imagens/fundo1-pq.png);
-    }
-}
-  
-/* Mais de 1080px */
-@media screen and (min-width: 1081px) {
-    section#nossos_servicos {
-        background-image: url(imagens/fundo1-g.png);
-    }
+    visibility: visible; /* Torna visível ao rolar */
+    opacity: 1; /* Torna opaco */
 }
 
 section#nossos_servicos h2 {
-    margin-top: 45px;
+    margin-top: 30px;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
 section#nossos_servicos p {
     text-indent: 20px;
-    margin-bottom: 10px;
-    max-width: 40vw;
+    margin-bottom: 20px;
+    max-width: 40vw; /* Ajusta a largura máxima para telas maiores */
+    font-size: 1.1em;
 }
 
 section#nossos_servicos ul {
-    list-style-type: '\2714\00A0';
+    list-style-type: '\2714\00A0'; /* Personaliza o marcador */
     list-style-position: inside;
-    font-size: 18px;
-    margin-left: 30px;
+    font-size: 1em;
+    padding: 0;
     max-width: 40vw;
+    gap: 10px; /* Espaçamento entre itens */
 }
 
 .botao {
@@ -256,7 +242,52 @@ section#nossos_servicos ul {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px; /* Estética arredondada */
 }
+
+@media screen and (max-width: 843px) {
+    section#nossos_servicos {
+        padding: 0 20px; /* Margem interna de 20px */
+        margin: 0 auto; /* Mantém centralizado */
+        background-size: contain; /* Ajusta o fundo para caber no espaço */
+        max-width: 90%;
+        background-color: transparent;
+    }
+
+    section#nossos_servicos p {
+        font-size: 1em; /* Ajusta o texto para menor tela */
+        text-indent: 0; /* Remove recuo em telas menores */
+        margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
+        text-align: justify; /* Mantém alinhamento justificado */
+        max-width: 85vw;
+    }
+
+    section#nossos_servicos p.lista{
+        text-indent: 50px
+    }
+
+    section#nossos_servicos ul {
+        text-indent: 55px;
+        max-width: 85vw;
+        gap: 10px;
+    }
+}
+
+@media screen and (min-width: 844px) and (max-width: 1080px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-pq.png);
+        background-size: cover; /* Ajusta o fundo para cobrir a área */
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    section#nossos_servicos {
+        background-image: url(imagens/fundo1-g.png);
+        background-size: cover; /* Ajusta o fundo para cobrir a área */
+    }
+}
+
 /*---------------- Nossos Metodos ----------------*/
 section#por-que_contratar {
     padding: 50px 10%;
@@ -292,7 +323,7 @@ section#por-que_contratar h2 {
 }
 
 .metodos {
-    background-color: #16222e;
+    background-color: var(--cor3);
     padding: 25px;
     border-radius: 8px;
     flex: 1 1 calc(25% - 20px);
