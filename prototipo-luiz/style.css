@@ -171,17 +171,16 @@ main h2 {
     font-size: 2.0em;
 }
 
-
-@media (max-width: 900px) {
+@media (max-width: 748px) {
     main#quem_somos {
-        padding: 0 20px; /* Margem interna de 20px */
+        padding: 50px 20px 0px 20px;
         margin: 0 auto; /* Mantém centralizado */
         max-width: 90%;
     }
 
     main#quem_somos h2 {
         font-size: 1.8em; /* Tamanho reduzido para o título */
-        text-align: center; /* Centraliza o título */
+        text-align: left; /* Centraliza o título */
         margin-bottom: 15px;
         max-width: 85vw;
     }
@@ -189,9 +188,32 @@ main h2 {
     main#quem_somos p {
         font-size: 1em; /* Ajusta o texto para menor tela */
         text-indent: 0; /* Remove recuo em telas menores */
-        margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
+        margin-bottom: 10px; /* Reduz o espaçamento entre parágrafos */
         text-align: justify; /* Mantém alinhamento justificado */
         max-width: 85vw;
+    }
+}
+
+@media screen and (min-width: 749px) and (max-width: 900px) {
+    main#quem_somos {
+        padding: 50px 20px 0px 20px; /* Margem interna de 20px */
+        margin: 0 auto; /* Mantém centralizado */
+        max-width: 90%;
+    }
+
+    main#quem_somos h2 {
+        font-size: 1.8em; /* Tamanho reduzido para o título */
+        text-align: left; /* Centraliza o título */
+        margin-bottom: 15px;
+        max-width: 55vw;
+    }
+
+    main#quem_somos p {
+        font-size: 1em; /* Ajusta o texto para menor tela */
+        text-indent: 0; /* Remove recuo em telas menores */
+        margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
+        text-align: justify; /* Mantém alinhamento justificado */
+        max-width: 55vw;
     }
 }
 /*---------------- Nossos Servicos ----------------*/
@@ -223,8 +245,7 @@ section#nossos_servicos h2 {
 section#nossos_servicos p {
     text-indent: 20px;
     margin-bottom: 20px;
-    max-width: 40vw; /* Ajusta a largura máxima para telas maiores */
-    font-size: 1.1em;
+    max-width: 46vw; /* Ajusta a largura máxima para telas maiores */
 }
 
 section#nossos_servicos ul {
@@ -232,7 +253,7 @@ section#nossos_servicos ul {
     list-style-position: inside;
     font-size: 1em;
     padding: 0;
-    max-width: 40vw;
+    max-width: 46vw;
     gap: 10px; /* Espaçamento entre itens */
 }
 
@@ -248,15 +269,15 @@ section#nossos_servicos ul {
 
 @media screen and (max-width: 843px) {
     section#nossos_servicos {
-        padding: 0 20px; /* Margem interna de 20px */
+        padding: 80px 20px 50px 20px; /* Margem interna de 20px */
         margin: 0 auto; /* Mantém centralizado */
         background-size: contain; /* Ajusta o fundo para caber no espaço */
+        min-height: 40vw;
         max-width: 90%;
         background-color: transparent;
     }
 
     section#nossos_servicos p {
-        font-size: 1em; /* Ajusta o texto para menor tela */
         text-indent: 0; /* Remove recuo em telas menores */
         margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
         text-align: justify; /* Mantém alinhamento justificado */
@@ -265,6 +286,10 @@ section#nossos_servicos ul {
 
     section#nossos_servicos p.lista{
         text-indent: 50px
+    }
+
+    section#nossos_servicos h2 {
+        font-size: 1.8em;
     }
 
     section#nossos_servicos ul {
@@ -290,7 +315,7 @@ section#nossos_servicos ul {
 
 /*---------------- Nossos Metodos ----------------*/
 section#por-que_contratar {
-    padding: 50px 10%;
+    padding: 60px 10%;
     text-align: center;
     background-image: url(imagens/fundo2-1200x800.jpeg);
     background-size: cover; 
@@ -344,15 +369,14 @@ section#por-que_contratar h2 {
     text-align: center;
 }
 
-.metodos h3 {
-    color: #00d8a5;
+.metodos h3, .metodos2 h3 {
+    font-size: 2.0em;
     margin-bottom: 15px;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
 }
 
-.metodos2 h3 {
-    margin-bottom: 15px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.825);
+.metodos h3 {
+    color: var(--cor0);
 }
 
 .metodos p, .metodos2 p {
