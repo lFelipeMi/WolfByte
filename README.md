@@ -2,6 +2,14 @@
 
 Este é o repositório do projeto de criação de um site desenvolvido para a disciplina de **Engenharia de Software** do 5º semestre.
 
+## Sumário
+1. [Integrantes do Grupo](#integrantes-do-grupo)
+2. [Descrição do Projeto](#descrição-do-projeto)
+3. [Fontes de Inspiração](#fontes-de-inspiração)
+4. [Tecnologias Utilizadas](#tecnologias-utilizadas)
+5. [Link para o Site](#link-para-o-site)
+6. [Licença](#licença)
+
 ## Integrantes do Grupo
 - **Cleitom Guilhermite**
 - **Leonardo Araújo**
@@ -26,9 +34,15 @@ Durante o desenvolvimento do projeto, foram utilizadas algumas fontes de inspira
 - **JavaScript**
 - **Git** para controle de versão e colaboração.
 
-## Instruções para Execução Local
+## Link para o Site
+O site está hospedado no GitHub Pages e pode ser acessado através de um [clique aqui](https://lfelipemi.github.io/WolfByte/home.html).
 
-1. Clone o repositório em sua máquina local:
 
-   ```bash
-   git clone https://github.com/lFelipeMi/WolfByte.git
+## Licença
+
+Este projeto é licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+Agradecemos por visitar o repositório do **WolfByte**! Sinta-se à vontade para nos contatar com dúvidas ou sugestões.
+
