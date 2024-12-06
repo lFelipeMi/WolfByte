@@ -1,3 +1,4 @@
+/* Desenha chuva de bits */
 const c = document.getElementById("matrix");
 const ctx = c.getContext("2d");
 
@@ -45,7 +46,20 @@ function draw() {
 
 draw();
 
+/* Troca a tela quando rola */
 document.addEventListener("scroll", function () {
   const minhaDiv = document.getElementById("nossos_servicos");
   minhaDiv.classList.add("scrolled");
+});
+
+/* Menu */
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("nav");
+
+// Adiciona/remova a classe active ao clicar
+menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active"); // Ativa/desativa o menu
+    menuToggle.classList.toggle("active"); // Ativa/desativa o estado ativo do ícone
+    nav.classList.toggle("active");
 });

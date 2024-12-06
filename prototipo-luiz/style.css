@@ -9,25 +9,25 @@
     --cor3: #16222e;
     --cor4: #0b0b26;
     --cor5: #06061b;
-    --fonte-padrao: 'Poppins', sans-serif;
+    --fonte-padrao: 'Poppins', Arial, sans-serif;
 }
 
 * {
     font-weight: 300;
-    font-size: 22px;
+    font-size: 18px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--fonte-padrao), Arial, sans-serif;
-    font-size: 30px;
+    font-family: var(--fonte-padrao);
+    font-size: 1.7em;
     color: #fff;
     background-color: var(--cor5);
 }
 
-/* Canvas */
+/*---------------- Chuva de bits ----------------*/
 canvas {
     position: fixed;
     top: 0;
@@ -37,15 +37,10 @@ canvas {
     z-index: -1;
 }
 
+/*---------------- Barra de navegação ----------------*/
 header {
     text-align: center;
-    padding: 20px 20px 50px 20px 0;
-    background-color: transparent;
-}
-
-main {
-    text-align: center;
-    padding: 50px 20px 0;
+    padding: 15px 50px;
     background-color: transparent;
 }
 
@@ -55,7 +50,7 @@ nav {
     align-items: center;
     height: 110px;
     padding: 0 10%;
-    background: linear-gradient(to bottom, #000000, #000000, #000000, rgba(0, 0, 0, 0.16));
+    background: linear-gradient(to bottom, #000, #000, #000, rgba(0, 0, 0, 0.16));
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -64,22 +59,95 @@ nav {
     z-index: 1000;
 }
 
+nav .logo {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+nav ul {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 nav a {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: var(--cor0);
 }
 
-nav ul {
-    display: flex;
-    gap: 60px;
-    margin-bottom: 40px;
-    list-style: none;
+.menu-toggle {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    gap: 5px;
+    right: 90px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff; 
+    border-radius: 2px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-toggle:not(.active):hover span {
+    background-color: var(--cor0);
+}
+
+.menu-toggle.active:hover span {
+    background-color: #fff; /* Branco */
+}
+
+.menu-toggle.active span {
+    background-color: var(--cor0);
+}
+
+@media (max-width: 900px) {
+    nav ul {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column; /* Organiza os itens em coluna */
+        position: absolute;
+        text-align: center;
+        top: 70px; /* Ajusta para ficar abaixo da barra de navegação */
+        right: 10px; /* Alinha à direita */
+        background: rgba(0, 0, 0, 0.5); /* Fundo preto com transparência */
+        padding: 10px 10px; /* Adiciona espaço interno */
+        border-radius: 10px; /* Borda arredondada */
+        width: auto; /* Ajusta a largura ao conteúdo */
+        text-align: left; /* Alinha os itens à esquerda */
+        z-index: 1000; /* Certifique-se que fica acima de outros elementos */
+        gap: 10px;
+    }
+
+    nav ul.active {
+        display: flex; /* Mostra o menu ao ativar */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostra os três risquinhos */
+    }
+}
+
+
+/*---------------- Quem Somos ----------------*/
+main#quem_somos {
+    text-align: center;
+    padding: 50px 20px 0;
+    background-color: transparent;
 }
 
 main#quem_somos {
@@ -112,6 +180,8 @@ main h2 {
     }   
 }
 
+
+/*---------------- Nossos Servicos ----------------*/
 section#nossos_servicos {
     text-align: center;
     padding: 50px 20px;
@@ -187,7 +257,7 @@ section#nossos_servicos ul {
     padding: 10px 20px;
     cursor: pointer;
 }
-
+/*---------------- Nossos Metodos ----------------*/
 section#por-que_contratar {
     padding: 50px 10%;
     text-align: center;
@@ -271,11 +341,12 @@ section#por-que_contratar h2 {
         max-width: 100%;
     }
 }
-/* Rodapé */
-/* Geral do footer */
+
+
+/*---------------- RODAPÉ ----------------*/
 .footer {
-    background-color: var(--cor4); /* Troque para a cor do seu site */
-    color: #ffffff; /* Texto branco para contraste */
+    background-color: var(--cor4); 
+    color: #ffffff; 
     text-align: center;
     padding: 20px;
     font-family: 'Arial', sans-serif;
@@ -288,7 +359,7 @@ section#por-que_contratar h2 {
 }
 
 .footer .social-media img {
-    width: 40px; /* Ajuste o tamanho conforme necessário */
+    width: 40px;
     height: 40px;
     transition: transform 0.3s;
 }
@@ -316,21 +387,15 @@ section#por-que_contratar h2 {
     display: inline-block;
     width: 6px; /* Tamanho da bolinha */
     height: 6px;
-    background-color: #ffffff; /* Cor da bolinha */
-    border-radius: 50%; /* Torna a bolinha redonda */
-    margin-right: 8px; /* Espaço entre a bolinha e o texto */
-    vertical-align: middle; /* Alinha a bolinha ao texto */
+    background-color: var(--cor0);
+    border-radius: 50%; 
+    margin-right: 8px;
+    vertical-align: middle; 
     transition: background-color 0.3s; /* Animação suave */
-}
-
-.footer .links a:hover::before,
-.footer .policies a:hover::before {
-    background-color: #00d1ff; /* Cor da bolinha ao hover (opcional) */
-}
-  
+}  
   
 .footer p {
     margin-top: 10px;
     font-size: 12px;
-    color: #bbbbbb;
+    color: var(--cor1);
 }
