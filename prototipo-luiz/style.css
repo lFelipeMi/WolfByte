@@ -272,77 +272,40 @@ section#por-que_contratar h2 {
     }
 }
 /* Rodapé */
+/* Geral do footer */
 .footer {
-    background-color: var(--cor4);
-    padding: 20px 20px; /* Menos padding para economizar espaço */
-    min-height: 120px; /* Altura mínima para garantir espaçamento confortável */
-    max-height: 180px; /* Altura máxima para não ocupar muito espaço em telas grandes */
-    height: auto; /* A altura se adapta ao conteúdo */
+    background-color: var(--cor4); /* Troque para a cor do seu site */
+    color: #ffffff; /* Texto branco para contraste */
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
 }
 
-.caixa2 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Estilo dos ícones das redes sociais */
+.footer .social-media a {
+    margin: 0 10px;
+    display: inline-block;
 }
 
-.footer-indv {
-    flex: 1 1 22%;
-    margin: 10px;
+.footer .social-media img {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: 40px;
+    transition: transform 0.3s;
 }
 
-.footer-indv h2 {
-    font-size: 36px;
-    font-weight: 500;
+.footer .social-media img:hover {
+    transform: scale(1.2);
 }
 
-.footer-indv h3 {
-    font-size: 18px; /* Reduz o tamanho do título para economizar espaço */
-    color: var(--cor0);
-    margin-bottom: 10px; /* Menos espaço entre o título e a lista */
-}
-
-.footer-indv ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-indv ul li {
-    font-size: 14px; /* Fonte menor para as listas */
-    line-height: 1.8;
-    color: #d9d9d9;
-    cursor: pointer;
-}
-
-.footer-indv a {
+.footer .links a,
+.footer .policies a {
+    color: #ffffff;
     text-decoration: none;
-    font-size: 14px; /* Fonte menor para as listas */
-    line-height: 1.8;
-    color: #d9d9d9;
-    cursor: pointer;
+    margin: 0 10px;
+    font-size: 14px;
 }
 
-.footer-indv ul li:hover {
+.footer .links a:hover,
+.footer .policies a:hover {
     color: var(--cor0);
 }
-
-.footer-indv a:hover {
-    color: var(--cor0);
-}
-
-@media (min-width: 1024px) {
-    .caixa2 {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .footer-indv {
-        flex: 1 1 30%;
-        margin: 0 15px;
-        text-align: left;
-    }
-}
-
