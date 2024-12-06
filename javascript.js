@@ -1,4 +1,4 @@
-/* Desenha chuva de bits */
+/* ------------ Desenha chuva de bits ------------ */
 const c = document.getElementById("matrix");
 const ctx = c.getContext("2d");
 
@@ -46,14 +46,14 @@ function draw() {
 
 draw();
 
-/* Troca a tela quando rola */
+/* ------------ Troca a tela quando rola ------------ */
 document.addEventListener("scroll", function () {
   const minhaDiv = document.getElementById("nossos_servicos");
   minhaDiv.classList.add("scrolled");
 });
 
 
-/* Menu */
+/* ------------ Menu ------------ */
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
