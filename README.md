@@ -11,10 +11,10 @@ Este é o repositório do projeto de criação de um site desenvolvido para a di
 6. [Licença](#licença)
 
 ## Integrantes do Grupo
-- **Cleitom Guilhermite**
-- **Leonardo Araújo**
-- **Luiz F. Miranda**
-- **Stefany Silva**
+* **Cleitom Guilhermite** - [GitHub](https://github.com/Draky-Rollgard)
+* **Leonardo Araújo** - [GitHub](https://github.com/LeoAboard)
+* **Stefany Silva** - [GitHub](https://github.com/stefanytk)
+* **Luiz F. Miranda** - [GitHub](https://github.com/lfelipemi)
 
 ## Descrição do Projeto
 O projeto tem como objetivo criar um site para a empresa **WolfByte**, focada em soluções digitais e serviços de desenvolvimento web. O site foi projetado para apresentar os produtos e serviços da empresa.
