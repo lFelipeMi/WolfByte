@@ -309,3 +309,28 @@ section#por-que_contratar h2 {
 .footer .policies a:hover {
     color: var(--cor0);
 }
+
+.footer .links a:hover::before,
+.footer .policies a:hover::before {
+    content: "";
+    display: inline-block;
+    width: 6px; /* Tamanho da bolinha */
+    height: 6px;
+    background-color: #ffffff; /* Cor da bolinha */
+    border-radius: 50%; /* Torna a bolinha redonda */
+    margin-right: 8px; /* Espaço entre a bolinha e o texto */
+    vertical-align: middle; /* Alinha a bolinha ao texto */
+    transition: background-color 0.3s; /* Animação suave */
+}
+
+.footer .links a:hover::before,
+.footer .policies a:hover::before {
+    background-color: #00d1ff; /* Cor da bolinha ao hover (opcional) */
+}
+  
+  
+.footer p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #bbbbbb;
+}
