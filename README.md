@@ -32,6 +32,8 @@ Durante o desenvolvimento do projeto, foram utilizadas algumas fontes de inspira
 - **HTML5**
 - **CSS3**
 - **JavaScript**
+- **Canva**
+- **GIMP**
 - **Git** para controle de versão e colaboração.
 
 ## Link para o Site

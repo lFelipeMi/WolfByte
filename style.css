@@ -119,22 +119,36 @@ nav a:hover {
 @media (max-width: 900px) {
     nav ul {
         display: none; /* Esconde o menu por padrão */
-        flex-direction: column; /* Organiza os itens em coluna */
-        position: absolute;
-        text-align: center;
-        top: 70px; /* Ajusta para ficar abaixo da barra de navegação */
-        right: 10px; /* Alinha à direita */
-        background: rgba(0, 0, 0, 0.5); /* Fundo preto com transparência */
-        padding: 10px 10px; /* Adiciona espaço interno */
-        border-radius: 10px; /* Borda arredondada */
-        width: auto; /* Ajusta a largura ao conteúdo */
-        text-align: left; /* Alinha os itens à esquerda */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed; /* Ocupa a tela inteira */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Largura total da viewport */
+        height: 100vh; /* Altura total da viewport */
+        background: rgba(0, 0, 0, 0.85); /* Fundo escuro com transparência */
         z-index: 1000; /* Certifique-se que fica acima de outros elementos */
-        gap: 10px;
+        gap: 20px; /* Espaço entre os itens */
     }
 
     nav ul.active {
         display: flex; /* Mostra o menu ao ativar */
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        font-size: 1.5rem; /* Ajuste do tamanho da fonte */
+        color: #fff; /* Cor do texto */
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: var(--cor0); /* Cor ao passar o mouse */
     }
 
     .menu-toggle {
