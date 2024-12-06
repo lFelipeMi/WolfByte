@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist+Mono&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-/* Variáveis */
+/* Variáveis Globais */
 :root {
     --cor0: #00FFFF;
     --cor1: #025E73;
@@ -12,22 +12,27 @@
     --fonte-padrao: 'Poppins', Arial, sans-serif;
 }
 
+/* Definimos uma fonte padrão, sua cor, espessura e tamanho de base */
+/* Removemos as bordas e incluimos uma margem no tamanho total do site */
+/* Remove decoração de links */
 * {
+    font-family: var(--fonte-padrao);
     font-weight: 300;
     font-size: 18px;
+    color: #fff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
-    font-family: var(--fonte-padrao);
-    font-size: 1.7em;
-    color: #fff;
     background-color: var(--cor5);
 }
 
 /*---------------- Chuva de bits ----------------*/
+/* Fixa o elemento na viewport e alinha corretamente para ocupar toda a tela */
+/* Para que o elemento fique atrá de todos outros elementos z-index: -1 */
 canvas {
     position: fixed;
     top: 0;
@@ -38,20 +43,27 @@ canvas {
 }
 
 /*---------------- Barra de navegação ----------------*/
+/* Temos um conteúdo centralizado com fundo transparente */
+/* top: 15px | l/r: 50px | bot: 50px*/
 header {
     text-align: center;
-    padding: 15px 50px;
     background-color: transparent;
+    padding: 15px 50px 50px;
 }
 
+
+/* Layout flexivel e itens alinhados no centro */
+/* Altura da barra, espaçamento interno e gambiarra */
+/* Temos uma sombra não tão desnecessária*/
+/* Elemento terá posição fixa no topo e alinhado à esquerda */
+/* Menu ficará acima de outros elementos tendo z-index: 1000*/
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 110px;
     padding: 0 10%;
-    background: linear-gradient(to bottom, #000, #000, #000, rgba(0, 0, 0, 0.16));
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #000, #000, #000, #000, #000, #000, #000, #000, rgba(0, 0, 0, 0.16)); /*Famosa gambiarra*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 0;
     left: 0;
@@ -59,33 +71,38 @@ nav {
     z-index: 1000;
 }
 
+
+/* Adiciona uma margem direita para logo não ficar grudada com a lista */
 nav .logo {
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
     margin-right: 20px;
 }
 
+
+/* Layout flexivel, com espaçamento de 60px e sem marcador*/
 nav ul {
     display: flex;
     gap: 60px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
+/* Aumenta tamanho e expessura da fonte. Adiciona uma transiçao a cor*/
 nav a {
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
     transition: color 0.3s;
 }
 
+/* Quando passar o mouse, o texto fica com destaque */
 nav a:hover {
     color: var(--cor0);
 }
 
+/* Botão de menu para dispositivos móveis e/ou telas pequenas */
+/* Em telas maiores o botão não aparece */
+/* Organiza as barrinhas inicialmente em colunas verticais alinhadas */
+/* 5px de espaçamento, 20px do canto direito */
+/* Temos uma animação de cursor */
+/* z-index:1100 garante que ficará acima da barra de navegação quando ativo */
 .menu-toggle {
     display: none;
     position: absolute;
@@ -96,9 +113,11 @@ nav a:hover {
     right: 20px;
     cursor: pointer;
     z-index: 1100;
-    transition: transform 0.5s ease, top 0.5s ease;
 }
 
+/* Cada barrinha será um bloco individual, com largura e altura definidas */
+/* Barrinhas brancas e levemente arredondadas */
+/* Temos uma animação suave para alterações de cor, transformações e opacidade */
 .menu-toggle span {
     display: block;
     width: 25px;
@@ -108,67 +127,60 @@ nav a:hover {
     transition: background-color 0.6s, transform 0.6s, opacity 0.3s;
 }
 
-/* Transformar as barrinhas em "X" */
+/* ---- Transformar as barrinhas em "X" translate(x,y) ---- */
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 5.5px); /* Ajuste fino para alinhamento */
 }
 
+/* Esconde a linha do meio */
 .menu-toggle.active span:nth-child(2) {
-    opacity: 0; /* Esconde a linha do meio */
+    opacity: 0; 
 }
 
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -5.5px); /* Ajuste fino para alinhamento */
 }
+/* ---- ---- */
 
-/* Reposicionar o botão para baixo ao abrir o menu */
-.menu-toggle.active {
-    position: fixed;
-    margin-top: auto; 
-    left: 50%; 
-    transform: translateX(-50%); 
-}
-
+/* Muda a cor ao passar o mouse dependendo do estado (ativo/não ativo)*/
 .menu-toggle:not(.active):hover span {
     background-color: var(--cor0);
 }
 
 .menu-toggle.active:hover span {
-    background-color: #fff; /* Branco */
+    background-color: #fff; 
 }
 
 .menu-toggle.active span {
     background-color: var(--cor0);
 }
+/* ---- ---- */
 
+/* Adionando responsividade para telas menores */
 @media (max-width: 900px) {
+    /* O meno tem seus itens centralizados e alinhados, com sua posição fixa */
+    /* Seu fundo é opaco na cor preta e ocupa toda a tela disponivel */
+    /* Espaçamento de 20px verticais*/
     nav ul {
         display: none; /* Esconde o menu por padrão */
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: fixed; /* Ocupa a tela inteira */
+        position: fixed; 
         top: 0;
         left: 0;
-        width: 100vw; /* Largura total da viewport */
-        height: 100vh; /* Altura total da viewport */
-        background: rgba(0, 0, 0, 0.85); /* Fundo escuro com transparência */
-        z-index: 1000; /* Certifique-se que fica acima de outros elementos */
-        gap: 20px; /* Espaço entre os itens */
+        width: 100vw; 
+        height: 100vh; 
+        background: rgba(0, 0, 0, 0.85);
+        gap: 20px; 
     }
 
     nav ul.active {
         display: flex; /* Mostra o menu ao ativar */
     }
 
-    nav ul li {
-        list-style: none;
-    }
-
     nav ul li a {
-        text-decoration: none;
         font-size: 1.5rem; /* Ajuste do tamanho da fonte */
-        color: #fff; /* Cor do texto */
         transition: color 0.3s;
     }
 
@@ -176,67 +188,51 @@ nav a:hover {
         color: var(--cor0); /* Cor ao passar o mouse */
     }
 
+    /* Agora os risquinhos vão aparecer */
     .menu-toggle {
-        display: flex; /* Mostra os três risquinhos */
+        display: flex;
     }
 }
 
 
 /*---------------- Quem Somos ----------------*/
+
+/* Layout flexivel com margem definida */
+/* Sem background pois será preenchido pela animação js*/
 main#quem_somos {
     text-align: center;
-    padding: 50px 20px 0;
-    background-color: transparent;
-    max-width: 50%;
-    margin: 50px;
+    padding: 50px 20px;
+    margin: 50px 50px 100px;
     text-align: justify;
-    margin-bottom: 100px;
+    background-color: transparent;
 }
 
-main p {
+/* Adiciona uma identação no inicio de cada paragrafo da main e uma margem inferior */
+/* Define 1.2 * TAM da fonte e expessura, vai ocupar só 40% inicialmente*/
+main#quem_somos p {
     text-indent: 20px;
     margin-bottom: 10px;
     font-size: 1.2em;
-    max-width: 40vw;
     font-weight: 400;
-}
-
-main h2 {
     max-width: 40vw;
-    font-weight: 600;
-    margin-top: 70px;
-    margin-bottom: 20px;
-    text-align: left;
+}
+
+/* Define 2 * TAM da fonte, em negrito e alinhado a esquerda */
+/* Ocupa 40% da tela e tem margens de 70px, exceto pela inferior */
+main#quem_somos h2 {
     font-size: 2.0em;
+    font-weight: 600;
+    text-align: left;
+    max-width: 40vw;
+    margin-top: 70px 70px 20px;
 }
 
-@media (max-width: 748px) {
-    main#quem_somos {
-        padding: 50px 20px 0px 20px;
-        margin: 0 auto; /* Mantém centralizado */
-        max-width: 90%;
-    }
 
-    main#quem_somos h2 {
-        font-size: 1.8em; /* Tamanho reduzido para o título */
-        text-align: left; /* Centraliza o título */
-        margin-bottom: 15px;
-        max-width: 85vw;
-    }
-
-    main#quem_somos p {
-        font-size: 1em; /* Ajusta o texto para menor tela */
-        text-indent: 0; /* Remove recuo em telas menores */
-        margin-bottom: 10px; /* Reduz o espaçamento entre parágrafos */
-        text-align: justify; /* Mantém alinhamento justificado */
-        max-width: 85vw;
-    }
-}
-
-@media screen and (min-width: 749px) and (max-width: 900px) {
+/* Definimos 2 tamanhos de tela onde: */
+@media screen and (max-width: 900px) {
     main#quem_somos {
         padding: 50px 20px 0px 20px; /* Margem interna de 20px */
-        margin: 0 auto; /* Mantém centralizado */
+        margin: 0 auto 90px; /* Mantém centralizado */
         max-width: 90%;
     }
 
@@ -255,62 +251,79 @@ main h2 {
         max-width: 55vw;
     }
 }
+
+@media (max-width: 748px) {
+    main#quem_somos {
+        margin: 0 auto; /* Mantém centralizado*/
+    }
+
+    main#quem_somos h2 {
+        margin-bottom: 15px;
+        max-width: 85vw; /* Aumento do espaço de exibição */
+    }
+
+    main#quem_somos p {
+        margin-bottom: 10px; /* Reduz o espaçamento entre parágrafos */
+        max-width: 85vw; /* Aumento do espaço de exibição */
+    }
+}
+
 /*---------------- Nossos Servicos ----------------*/
+
+/* Define layout com texto justificado e fundo dinamico */
+/* Espaçamento interno e altura minima da tela, além da largura automatica */
+/* Inicialmente invisivel/escondida */
 section#nossos_servicos {
     text-align: justify;
-    padding: 50px 20px; /* Espaçamento interno */
-    background-size: cover; /* Ajusta o fundo para cobrir a área */
+    background-size: cover; 
     background-repeat: no-repeat; /* Impede repetições */
     background-position: center; /* Centraliza a imagem */
-    min-height: 100vh; /* Garante altura mínima de 100% da viewport */
-    width: 100%; /* Ajusta a largura automaticamente */
-    visibility: hidden; /* Inicialmente escondido */
-    opacity: 0; /* Inicialmente invisível */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Suaviza a transição */
+    padding: 50px 20px; 
+    min-height: 100vh;
+    width: 100%;
+    visibility: hidden; 
+    opacity: 0; 
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Suaviza a transição quando aparece */
 }
 
+ /* Torna visível ao rolar */
 section#nossos_servicos.scrolled {
-    visibility: visible; /* Torna visível ao rolar */
-    opacity: 1; /* Torna opaco */
+    visibility: visible;
+    opacity: 1;
 }
 
+/* Titulo em negrito e fonte 2*TAM */
+/* Margem superior e inferior*/
 section#nossos_servicos h2 {
-    margin-top: 30px;
     font-weight: 500;
     font-size: 2em;
-    margin-bottom: 20px;
+    margin: 30px 0 15px;
 }
 
+/* Identação inicial nos paragráfos e controle da largura máxima */
 section#nossos_servicos p {
-    text-indent: 20px;
-    margin-bottom: 20px;
-    max-width: 46vw; /* Ajusta a largura máxima para telas maiores */
+    text-indent: 15px;
+    margin-bottom: 15px;
+    max-width: 46vw; 
 }
 
+/* Define marcador personalizado dentro da lista e espaçamento */
 section#nossos_servicos ul {
-    list-style-type: '\2714\00A0'; /* Personaliza o marcador */
+    list-style-type: '\2714\00A0';
     list-style-position: inside;
-    font-size: 1em;
     padding: 0;
     max-width: 46vw;
-    gap: 10px; /* Espaçamento entre itens */
+    gap: 10px
 }
 
-.botao {
-    background-color: var(--cor0);
-    color: var(--cor5);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-    border-radius: 5px; /* Estética arredondada */
-}
 
-@media screen and (max-width: 843px) {
+/* Ajusta parágrafo para telas menores */
+@media screen and (max-width: 846px) {
+    /* Nesse tamanho de tela temos configurações semelhantes a main */
     section#nossos_servicos {
-        padding: 80px 20px 50px 20px; /* Margem interna de 20px */
-        margin: 0 auto; /* Mantém centralizado */
-        background-size: contain; /* Ajusta o fundo para caber no espaço */
+        padding: 80px 20px 50px 20px; 
+        margin: 0 auto 40px; 
+        background-size: contain; 
         min-height: 40vw;
         max-width: 90%;
         background-color: transparent;
@@ -338,23 +351,25 @@ section#nossos_servicos ul {
     }
 }
 
-@media screen and (min-width: 844px) and (max-width: 1080px) {
+/* Nesses dois outros tamanhos temos uma mudança nas imagens de background */
+@media screen and (min-width: 847px) and (max-width: 1080px) {
     section#nossos_servicos {
         background-image: url(imagens/fundo1-pq.png);
-        background-size: cover; /* Ajusta o fundo para cobrir a área */
     }
 }
 
 @media screen and (min-width: 1081px) {
     section#nossos_servicos {
         background-image: url(imagens/fundo1-g.png);
-        background-size: cover; /* Ajusta o fundo para cobrir a área */
     }
 }
 
 /*---------------- Nossos Metodos ----------------*/
+
+/* Define o layout externo da seção, com plano espaçamento interno */
+/* Personalizei a imagem no fundo */
 section#por-que_contratar {
-    padding: 60px 10%;
+    padding: 40px 5%;
     text-align: center;
     background-image: url(imagens/fundo2-1200x800.jpeg);
     background-size: cover; 
@@ -362,67 +377,77 @@ section#por-que_contratar {
     background-position: center;
 }
 
+/* Todo paragráfo dentro da div terão essas configurações */
 section#por-que_contratar p {
     max-width: 800px;
     margin: 0 auto 20px;
-    font-size: 20px;
+    font-size: 1.2em;
     padding: 0 10px;
 }
+
+/* Apenas os paragráfos que estão diretamente dentro da div tera essa margem */
 section#por-que_contratar > p {
     margin-bottom: 40px;
 }
 
-section#por-que_contratar h2 {
-    margin-top: 50px;
-    font-size: 32px;
+/* Margem do titulo, tamanho e negrito */
+section#por-que_contratar > h2 {
+    margin: 50px 0px 20px;
+    font-size: 2.5em;
     font-weight: 500;
-    margin-bottom: 20px;
 }
 
+/* Conteinar para os métodos com layout flexivel e espaçamento entre as caixas */
 .caixas {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 20px;
+    gap: 10px;
 }
 
+/* Define aparência, espaçamento, largura e alinhamento */
 .metodos {
     background-color: var(--cor3);
-    padding: 25px;
+    padding: 20px;
     border-radius: 8px;
     flex: 1 1 calc(25% - 20px);
-    max-width: calc(30% - 20px);
-    min-width: 250px;
+    max-width: calc(40% - 20px);
+    min-width: 320px;
     box-sizing: border-box;
     text-align: center;
 }
 
+/* Semelhante a "metodos" com um fundo em gradiente */
 .metodos2 {
     background-image: linear-gradient(135deg, var(--cor0), var(--cor1), var(--cor2));
-    padding: 25px;
+    padding: 20px;
     border-radius: 8px;
     flex: 1 1 calc(25% - 20px);
-    max-width: calc(30% - 20px);
-    min-width: 250px;
+    max-width: calc(40% - 20px);
+    min-width: 320px;
     box-sizing: border-box;
     text-align: center;
 }
 
+
+/* Ajusta tamanho, margens e sombra do texto */
 .metodos h3, .metodos2 h3 {
     font-size: 2.0em;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
 }
 
+/* Aplica cor personalizada */
 .metodos h3 {
     color: var(--cor0);
 }
 
+/* Adiciona sombra para destacar o texto */
 .metodos p, .metodos2 p {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.825);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1090px) {
     .metodos, .metodos2 {
         flex: 1 1 calc(50% - 20px); /* Cada caixa ocupa cerca de 50% da largura em telas médias */
         max-width: calc(50% - 20px);
@@ -435,7 +460,6 @@ section#por-que_contratar h2 {
         max-width: 100%;
     }
 }
-
 
 /*---------------- RODAPÉ ----------------*/
 .footer {
