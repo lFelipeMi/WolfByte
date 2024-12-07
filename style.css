@@ -328,7 +328,7 @@ section#nossos_servicos ul {
 @media screen and (max-width: 846px) {
     /* Nesse tamanho de tela temos configurações semelhantes a main */
     section#nossos_servicos {
-        padding: 80px 20px 50px 20px; 
+        padding: 20px; 
         margin: 0 auto 40px; 
         background-size: contain; 
         min-height: 40vw;
