@@ -30,6 +30,11 @@ body {
     background-color: var(--cor5);
 }
 
+html {
+    scroll-padding-top: 90px; /* Ajuste para a altura do seu menu */
+}
+
+
 /*---------------- Chuva de bits ----------------*/
 /* Fixa o elemento na viewport e alinha corretamente para ocupar toda a tela */
 /* Para que o elemento fique atrá de todos outros elementos z-index: -1 */
@@ -201,8 +206,8 @@ nav a:hover {
 /* Sem background pois será preenchido pela animação js*/
 main#quem_somos {
     text-align: center;
-    padding: 50px 20px;
-    margin: 50px 50px 100px;
+    padding: 40px 20px;
+    margin: 30px 50px 0px;
     text-align: justify;
     background-color: transparent;
 }
@@ -232,7 +237,7 @@ main#quem_somos h2 {
 @media screen and (max-width: 900px) {
     main#quem_somos {
         padding: 50px 20px 0px 20px; /* Margem interna de 20px */
-        margin: 0 auto 90px; /* Mantém centralizado */
+        margin: 0 auto 30px; /* Mantém centralizado */
         max-width: 90%;
     }
 
@@ -278,7 +283,7 @@ section#nossos_servicos {
     background-size: cover; 
     background-repeat: no-repeat; /* Impede repetições */
     background-position: center; /* Centraliza a imagem */
-    padding: 50px 20px; 
+    padding: 30px 20px; 
     min-height: 100vh;
     width: 100%;
     visibility: hidden; 
@@ -297,7 +302,7 @@ section#nossos_servicos.scrolled {
 section#nossos_servicos h2 {
     font-weight: 500;
     font-size: 2em;
-    margin: 30px 0 15px;
+    margin: 10px 0 15px;
 }
 
 /* Identação inicial nos paragráfos e controle da largura máxima */
@@ -369,7 +374,7 @@ section#nossos_servicos ul {
 /* Define o layout externo da seção, com plano espaçamento interno */
 /* Personalizei a imagem no fundo */
 section#por-que_contratar {
-    padding: 40px 5%;
+    padding: 15px 5%;
     text-align: center;
     background-image: url(imagens/fundo2-1200x800.jpeg);
     background-size: cover; 
@@ -392,7 +397,7 @@ section#por-que_contratar > p {
 
 /* Margem do titulo, tamanho e negrito */
 section#por-que_contratar > h2 {
-    margin: 50px 0px 20px;
+    margin: 20px 0px;
     font-size: 2.5em;
     font-weight: 500;
 }
