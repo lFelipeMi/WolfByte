@@ -1,61 +1,59 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist+Mono&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist+Mono&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* Variáveis Globais */
 :root {
-    --cor0: #00FFFF;
-    --cor1: #025E73;
-    --cor2: #151570;
-    --cor3: #16222e;
-    --cor4: #0b0b26;
-    --cor5: #06061b;
-    --fonte-padrao: 'Poppins', Arial, sans-serif;
+  --cor0: #00ffff;
+  --cor1: #025e73;
+  --cor2: #151570;
+  --cor3: #16222e;
+  --cor4: #0b0b26;
+  --cor5: #06061b;
+  --fonte-padrao: "Poppins", Arial, sans-serif;
 }
 
 /* Definimos uma fonte padrão, sua cor, espessura e tamanho de base */
 /* Removemos as bordas e incluimos uma margem no tamanho total do site */
 /* Remove decoração de links */
 * {
-    font-family: var(--fonte-padrao);
-    font-weight: 300;
-    font-size: 18px;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  font-family: var(--fonte-padrao);
+  font-weight: 300;
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
-    background-color: var(--cor5);
+  background-color: var(--cor5);
 }
 
 html {
-    scroll-padding-top: 90px; /* Ajuste para a altura do seu menu */
+  scroll-padding-top: 90px; /* Ajuste para a altura do seu menu */
 }
-
 
 /*---------------- Chuva de bits ----------------*/
 /* Fixa o elemento na viewport e alinha corretamente para ocupar toda a tela */
 /* Para que o elemento fique atrá de todos outros elementos z-index: -1 */
 canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
 /*---------------- Barra de navegação ----------------*/
 /* Temos um conteúdo centralizado com fundo transparente */
 /* top: 15px | l/r: 50px | bot: 50px*/
 header {
-    text-align: center;
-    background-color: transparent;
-    padding: 15px 50px 50px;
+  text-align: center;
+  background-color: transparent;
+  padding: 15px 50px 50px;
 }
-
 
 /* Layout flexivel e itens alinhados no centro */
 /* Altura da barra, espaçamento interno e gambiarra */
@@ -63,43 +61,53 @@ header {
 /* Elemento terá posição fixa no topo e alinhado à esquerda */
 /* Menu ficará acima de outros elementos tendo z-index: 1000*/
 nav {
-    display: flex;
-    align-items: center;
-    height: 110px;
-    padding: 0 10%;
-    background: linear-gradient(to bottom, #000, #000, #000, #000, #000, #000, #000, #000, rgba(0, 0, 0, 0.16)); /*Famosa gambiarra*/
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+  padding: 0 10%;
+  background: linear-gradient(
+    to bottom,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    #000,
+    rgba(0, 0, 0, 0.16)
+  ); /*Famosa gambiarra*/
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
-
 
 /* Adiciona uma margem direita para logo não ficar grudada com a lista */
 nav .logo {
-    margin-right: 20px;
+  margin-right: 20px;
 }
-
 
 /* Layout flexivel, com espaçamento de 60px e sem marcador*/
 nav ul {
-    display: flex;
-    gap: 60px;
-    list-style: none;
+  display: flex;
+  gap: 60px;
+  list-style: none;
 }
 
 /* Aumenta tamanho e expessura da fonte. Adiciona uma transiçao a cor*/
 nav a {
-    font-size: 1.2em;
-    font-weight: 600;
-    transition: color 0.3s;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 /* Quando passar o mouse, o texto fica com destaque */
 nav a:hover {
-    color: var(--cor0);
+  color: var(--cor0);
 }
 
 /* Botão de menu para dispositivos móveis e/ou telas pequenas */
@@ -109,169 +117,167 @@ nav a:hover {
 /* Temos uma animação de cursor */
 /* z-index:1100 garante que ficará acima da barra de navegação quando ativo */
 .menu-toggle {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1100;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1100;
 }
 
 /* Cada barrinha será um bloco individual, com largura e altura definidas */
 /* Barrinhas brancas e levemente arredondadas */
 /* Temos uma animação suave para alterações de cor, transformações e opacidade */
 .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff; 
-    border-radius: 2px;
-    transition: background-color 0.6s, transform 0.6s, opacity 0.3s;
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: background-color 0.6s, transform 0.6s, opacity 0.3s;
 }
 
 /* ---- Transformar as barrinhas em "X" translate(x,y) ---- */
 .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 5.5px); /* Ajuste fino para alinhamento */
+  transform: rotate(45deg) translate(6px, 5.5px); /* Ajuste fino para alinhamento */
 }
 
 /* Esconde a linha do meio */
 .menu-toggle.active span:nth-child(2) {
-    opacity: 0; 
+  opacity: 0;
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -5.5px); /* Ajuste fino para alinhamento */
+  transform: rotate(-45deg) translate(6px, -5.5px); /* Ajuste fino para alinhamento */
 }
 /* ---- ---- */
 
 /* Muda a cor ao passar o mouse dependendo do estado (ativo/não ativo)*/
 .menu-toggle:not(.active):hover span {
-    background-color: var(--cor0);
+  background-color: var(--cor0);
 }
 
 .menu-toggle.active:hover span {
-    background-color: #fff; 
+  background-color: #fff;
 }
 
 .menu-toggle.active span {
-    background-color: var(--cor0);
+  background-color: var(--cor0);
 }
 /* ---- ---- */
 
 /* Adionando responsividade para telas menores */
 @media (max-width: 900px) {
-    /* O meno tem seus itens centralizados e alinhados, com sua posição fixa */
-    /* Seu fundo é opaco na cor preta e ocupa toda a tela disponivel */
-    /* Espaçamento de 20px verticais*/
-    nav ul {
-        display: none; /* Esconde o menu por padrão */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed; 
-        top: 0;
-        left: 0;
-        width: 100vw; 
-        height: 100vh; 
-        background: rgba(0, 0, 0, 0.85);
-        gap: 20px; 
-    }
+  /* O meno tem seus itens centralizados e alinhados, com sua posição fixa */
+  /* Seu fundo é opaco na cor preta e ocupa toda a tela disponivel */
+  /* Espaçamento de 20px verticais*/
+  nav ul {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    gap: 20px;
+  }
 
-    nav ul.active {
-        display: flex; /* Mostra o menu ao ativar */
-    }
+  nav ul.active {
+    display: flex; /* Mostra o menu ao ativar */
+  }
 
-    nav ul li a {
-        font-size: 1.5rem; /* Ajuste do tamanho da fonte */
-        transition: color 0.3s;
-    }
+  nav ul li a {
+    font-size: 1.5rem; /* Ajuste do tamanho da fonte */
+    transition: color 0.3s;
+  }
 
-    nav ul li a:hover {
-        color: var(--cor0); /* Cor ao passar o mouse */
-    }
+  nav ul li a:hover {
+    color: var(--cor0); /* Cor ao passar o mouse */
+  }
 
-    /* Agora os risquinhos vão aparecer */
-    .menu-toggle {
-        display: flex;
-    }
+  /* Agora os risquinhos vão aparecer */
+  .menu-toggle {
+    display: flex;
+  }
 }
-
 
 /*---------------- Quem Somos ----------------*/
 
 /* Layout flexivel com margem definida */
 /* Sem background pois será preenchido pela animação js*/
 main#quem_somos {
-    text-align: center;
-    padding: 40px 20px;
-    margin: 30px 50px 0px;
-    text-align: justify;
-    background-color: transparent;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 30px 50px 0px;
+  text-align: justify;
+  background-color: transparent;
 }
 
 /* Adiciona uma identação no inicio de cada paragrafo da main e uma margem inferior */
 /* Define 1.2 * TAM da fonte e expessura, vai ocupar só 40% inicialmente*/
 main#quem_somos p {
-    text-indent: 20px;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    font-weight: 400;
-    max-width: 40vw;
+  text-indent: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: 400;
+  max-width: 40vw;
 }
 
 /* Define 2 * TAM da fonte, em negrito e alinhado a esquerda */
 /* Ocupa 40% da tela e tem margens de 70px, exceto pela inferior */
 main#quem_somos h2 {
-    font-size: 2.0em;
-    font-weight: 600;
-    text-align: left;
-    max-width: 40vw;
-    margin-top: 70px 70px 20px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
+  font-size: 2em;
+  font-weight: 600;
+  text-align: left;
+  max-width: 40vw;
+  margin-top: 70px 70px 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
 }
-
 
 /* Definimos 2 tamanhos de tela onde: */
 @media screen and (max-width: 900px) {
-    main#quem_somos {
-        padding: 50px 20px 0px 20px; /* Margem interna de 20px */
-        margin: 0 auto 30px; /* Mantém centralizado */
-        max-width: 90%;
-    }
+  main#quem_somos {
+    padding: 50px 20px 0px 20px; /* Margem interna de 20px */
+    margin: 0 auto 30px; /* Mantém centralizado */
+    max-width: 90%;
+  }
 
-    main#quem_somos h2 {
-        font-size: 1.8em; /* Tamanho reduzido para o título */
-        text-align: left; /* Centraliza o título */
-        margin-bottom: 15px;
-        max-width: 55vw;
-    }
+  main#quem_somos h2 {
+    font-size: 1.8em; /* Tamanho reduzido para o título */
+    text-align: left; /* Centraliza o título */
+    margin-bottom: 15px;
+    max-width: 55vw;
+  }
 
-    main#quem_somos p {
-        font-size: 1em; /* Ajusta o texto para menor tela */
-        text-indent: 0; /* Remove recuo em telas menores */
-        margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
-        text-align: justify; /* Mantém alinhamento justificado */
-        max-width: 55vw;
-    }
+  main#quem_somos p {
+    font-size: 1em; /* Ajusta o texto para menor tela */
+    text-indent: 0; /* Remove recuo em telas menores */
+    margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
+    text-align: justify; /* Mantém alinhamento justificado */
+    max-width: 55vw;
+  }
 }
 
 @media (max-width: 748px) {
-    main#quem_somos {
-        margin: 0 auto; /* Mantém centralizado*/
-    }
+  main#quem_somos {
+    margin: 0 auto; /* Mantém centralizado*/
+  }
 
-    main#quem_somos h2 {
-        margin-bottom: 15px;
-        max-width: 85vw; /* Aumento do espaço de exibição */
-    }
+  main#quem_somos h2 {
+    margin-bottom: 15px;
+    max-width: 85vw; /* Aumento do espaço de exibição */
+  }
 
-    main#quem_somos p {
-        margin-bottom: 10px; /* Reduz o espaçamento entre parágrafos */
-        max-width: 85vw; /* Aumento do espaço de exibição */
-    }
+  main#quem_somos p {
+    margin-bottom: 10px; /* Reduz o espaçamento entre parágrafos */
+    max-width: 85vw; /* Aumento do espaço de exibição */
+  }
 }
 
 /*---------------- Nossos Servicos ----------------*/
@@ -280,95 +286,94 @@ main#quem_somos h2 {
 /* Espaçamento interno e altura minima da tela, além da largura automatica */
 /* Inicialmente invisivel/escondida */
 section#nossos_servicos {
-    text-align: justify;
-    background-size: cover; 
-    background-repeat: no-repeat; /* Impede repetições */
-    background-position: center; /* Centraliza a imagem */
-    padding: 30px 20px; 
-    min-height: 100vh;
-    width: 100%;
-    visibility: hidden; 
-    opacity: 0; 
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Suaviza a transição quando aparece */
+  text-align: justify;
+  background-size: cover;
+  background-repeat: no-repeat; /* Impede repetições */
+  background-position: center; /* Centraliza a imagem */
+  padding: 30px 20px;
+  min-height: 100vh;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Suaviza a transição quando aparece */
 }
 
- /* Torna visível ao rolar */
+/* Torna visível ao rolar */
 section#nossos_servicos.scrolled {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Titulo em negrito e fonte 2*TAM */
 /* Margem superior e inferior*/
 section#nossos_servicos h2 {
-    font-weight: 500;
-    font-size: 2em;
-    margin: 10px 0 15px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
+  font-weight: 500;
+  font-size: 2em;
+  margin: 10px 0 15px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
 }
 
 /* Identação inicial nos paragráfos e controle da largura máxima */
 section#nossos_servicos p {
-    text-indent: 15px;
-    margin-bottom: 15px;
-    max-width: 46vw; 
+  text-indent: 15px;
+  margin-bottom: 15px;
+  max-width: 46vw;
 }
 
 /* Define marcador personalizado dentro da lista e espaçamento */
 section#nossos_servicos ul {
-    list-style-type: '\2714\00A0';
-    list-style-position: inside;
-    padding: 0;
-    max-width: 46vw;
-    gap: 10px
+  list-style-type: "\2714\00A0";
+  list-style-position: inside;
+  padding: 0;
+  max-width: 46vw;
+  gap: 10px;
 }
-
 
 /* Ajusta parágrafo para telas menores */
 @media screen and (max-width: 846px) {
-    /* Nesse tamanho de tela temos configurações semelhantes a main */
-    section#nossos_servicos {
-        padding: 20px; 
-        margin: 0 auto 40px; 
-        background-size: contain; 
-        min-height: 40vw;
-        max-width: 90%;
-        background-color: transparent;
-    }
+  /* Nesse tamanho de tela temos configurações semelhantes a main */
+  section#nossos_servicos {
+    padding: 20px;
+    margin: 0 auto 40px;
+    background-size: contain;
+    min-height: 40vw;
+    max-width: 90%;
+    background-color: transparent;
+  }
 
-    section#nossos_servicos p {
-        text-indent: 0; /* Remove recuo em telas menores */
-        margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
-        text-align: justify; /* Mantém alinhamento justificado */
-        max-width: 85vw;
-    }
+  section#nossos_servicos p {
+    text-indent: 0; /* Remove recuo em telas menores */
+    margin-bottom: 15px; /* Reduz o espaçamento entre parágrafos */
+    text-align: justify; /* Mantém alinhamento justificado */
+    max-width: 85vw;
+  }
 
-    section#nossos_servicos p.lista{
-        text-indent: 50px
-    }
+  section#nossos_servicos p.lista {
+    text-indent: 50px;
+  }
 
-    section#nossos_servicos h2 {
-        font-size: 1.8em;
-    }
+  section#nossos_servicos h2 {
+    font-size: 1.8em;
+  }
 
-    section#nossos_servicos ul {
-        text-indent: 55px;
-        max-width: 85vw;
-        gap: 10px;
-    }
+  section#nossos_servicos ul {
+    text-indent: 55px;
+    max-width: 85vw;
+    gap: 10px;
+  }
 }
 
 /* Nesses dois outros tamanhos temos uma mudança nas imagens de background */
 @media screen and (min-width: 847px) and (max-width: 1080px) {
-    section#nossos_servicos {
-        background-image: url(imagens/fundo1-pq.png);
-    }
+  section#nossos_servicos {
+    background-image: url(imagens/fundo1-pq.png);
+  }
 }
 
 @media screen and (min-width: 1081px) {
-    section#nossos_servicos {
-        background-image: url(imagens/fundo1-g.png);
-    }
+  section#nossos_servicos {
+    background-image: url(imagens/fundo1-g.png);
+  }
 }
 
 /*---------------- Nossos Metodos ----------------*/
@@ -376,153 +381,162 @@ section#nossos_servicos ul {
 /* Define o layout externo da seção, com plano espaçamento interno */
 /* Personalizei a imagem no fundo */
 section#por-que_contratar {
-    padding: 15px 5%;
-    text-align: center;
-    background-image: url(imagens/fundo2-1200x800.jpeg);
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center;
+  padding: 15px 5%;
+  text-align: center;
+  background-image: url(imagens/fundo2-1200x800.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Todo paragráfo dentro da div terão essas configurações */
 section#por-que_contratar p {
-    max-width: 800px;
-    margin: 0 auto 20px;
-    font-size: 1.2em;
-    padding: 0 10px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  font-size: 1.2em;
+  padding: 0 10px;
 }
 
 /* Apenas os paragráfos que estão diretamente dentro da div tera essa margem */
 section#por-que_contratar > p {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 /* Margem do titulo, tamanho e negrito */
 section#por-que_contratar > h2 {
-    margin: 20px 0px;
-    font-size: 2.5em;
-    font-weight: 500;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
+  margin: 20px 0px;
+  font-size: 2.5em;
+  font-weight: 500;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
 }
 
 /* Conteinar para os métodos com layout flexivel e espaçamento entre as caixas */
 .caixas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
 }
 
 /* Define aparência, espaçamento, largura e alinhamento */
-.metodos, .metodos2 {
-    padding: 20px;
-    border-radius: 8px;
-    flex: 1 1 calc(25% - 20px);
-    max-width: calc(40% - 20px);
-    min-width: 320px;
-    box-sizing: border-box;
-    text-align: center;
-    box-shadow: 2px 3px 11px rgba(0, 0, 0, 0.582);
+.metodos,
+.metodos2 {
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(40% - 20px);
+  min-width: 320px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 2px 3px 11px rgba(0, 0, 0, 0.582);
 }
 
 .metodos {
-    background-color: var(--cor3);
+  background-color: var(--cor3);
 }
 
 /* Semelhante a "metodos" com um fundo em gradiente */
 .metodos2 {
-    background-image: linear-gradient(135deg, var(--cor0), var(--cor1), var(--cor2));
+  background-image: linear-gradient(
+    135deg,
+    var(--cor0),
+    var(--cor1),
+    var(--cor2)
+  );
 }
 
-
 /* Ajusta tamanho, margens e sombra do texto */
-.metodos h3, .metodos2 h3 {
-    font-size: 2.0em;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
+.metodos h3,
+.metodos2 h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.832);
 }
 
 /* Aplica cor personalizada */
 .metodos h3 {
-    color: var(--cor0);
+  color: var(--cor0);
 }
 
 /* Adiciona sombra para destacar o texto */
-.metodos p, .metodos2 p {
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.825);
+.metodos p,
+.metodos2 p {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.825);
 }
 
 @media (max-width: 1090px) {
-    .metodos, .metodos2 {
-        flex: 1 1 calc(50% - 20px); /* Cada caixa ocupa cerca de 50% da largura em telas médias */
-        max-width: calc(50% - 20px);
-    }
+  .metodos,
+  .metodos2 {
+    flex: 1 1 calc(50% - 20px); /* Cada caixa ocupa cerca de 50% da largura em telas médias */
+    max-width: calc(50% - 20px);
+  }
 }
 
 @media (max-width: 768px) {
-    .metodos, .metodos2 {
-        flex: 1 1 100%; /* Cada caixa ocupa 100% da largura em telas pequenas */
-        max-width: 100%;
-    }
+  .metodos,
+  .metodos2 {
+    flex: 1 1 100%; /* Cada caixa ocupa 100% da largura em telas pequenas */
+    max-width: 100%;
+  }
 
-    section#por-que_contratar > p {
-        text-align: justify;
-    }    
+  section#por-que_contratar > p {
+    text-align: justify;
+  }
 }
 
 /*---------------- RODAPÉ ----------------*/
 .footer {
-    background-color: var(--cor4); 
-    color: #ffffff; 
-    text-align: center;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
+  background-color: var(--cor4);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
 }
 
 /* Estilo dos ícones das redes sociais */
 .footer .social-media a {
-    margin: 0 10px;
-    display: inline-block;
+  margin: 0 10px;
+  display: inline-block;
 }
 
 .footer .social-media img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
 }
 
 .footer .social-media img:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .footer .links a,
 .footer .policies a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
 }
 
 .footer .links a:hover,
 .footer .policies a:hover {
-    color: var(--cor0);
+  color: var(--cor0);
 }
 
 .footer .links a:hover::before,
 .footer .policies a:hover::before {
-    content: "";
-    display: inline-block;
-    width: 6px; /* Tamanho da bolinha */
-    height: 6px;
-    background-color: var(--cor0);
-    border-radius: 50%; 
-    margin-right: 8px;
-    vertical-align: middle; 
-    transition: background-color 0.3s; /* Animação suave */
-}  
-  
+  content: "";
+  display: inline-block;
+  width: 6px; /* Tamanho da bolinha */
+  height: 6px;
+  background-color: var(--cor0);
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  transition: background-color 0.3s; /* Animação suave */
+}
+
 .footer p {
-    margin-top: 10px;
-    font-size: 12px;
-    color: var(--cor1);
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--cor1);
 }
