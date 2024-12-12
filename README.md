@@ -37,7 +37,7 @@ Durante o desenvolvimento do projeto, foram utilizadas algumas fontes de inspira
 - **Git** para controle de versão e colaboração.
 
 ## Link para o Site
-O site está hospedado no GitHub Pages e pode ser acessado através de um [clique aqui](https://lfelipemi.github.io/WolfByte/home.html).
+O site está hospedado no GitHub Pages e pode ser acessado através de um [clique aqui](https://lfelipemi.github.io/WolfByte/home).
 
 
 ## Licença
