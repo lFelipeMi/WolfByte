@@ -213,7 +213,7 @@ nav a:hover {
 /* Sem background pois será preenchido pela animação js*/
 main#quem_somos {
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px;
   margin: 30px 50px 0px;
   text-align: justify;
   background-color: transparent;
