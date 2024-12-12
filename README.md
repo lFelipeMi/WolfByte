@@ -11,7 +11,7 @@ Este é o repositório do projeto de criação de um site desenvolvido para a di
 6. [Licença](#licença)
 
 ## Integrantes do Grupo
-* **Cleitom Guilhermite** - [GitHub](https://github.com/Draky-Rollgard)
+* **Cleiton Guilhermite** - [GitHub](https://github.com/Draky-Rollgard)
 * **Leonardo Araújo** - [GitHub](https://github.com/LeoAboard)
 * **Stefany Silva** - [GitHub](https://github.com/stefanytk)
 * **Luiz F. Miranda** - [GitHub](https://github.com/lfelipemi)
