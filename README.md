@@ -15,7 +15,7 @@ Este é o repositório do projeto de criação de um site desenvolvido para a di
 
 - **Cleitom Guilhermite** - Analista de Sistemas [GitHub](https://github.com/Draky-Rollgard)
 - **Leonardo Araújo** - Projetista e Front-End [GitHub](https://github.com/LeoAboard)
-- **Stefany Silva** - CO-CEO Gerente de Projeto [GitHub](https://github.com/stefanytk)
+- **Stefany Silva** - Gerente de Projeto [GitHub](https://github.com/stefanytk)
 - **Luiz F. Miranda** - CEO Programador Full-Stack [GitHub](https://github.com/lfelipemi)
 
 ## Descrição do Projeto
